@@ -1,0 +1,31 @@
+       <Grid.ColumnDefinitions>
+           <ColumnDefinition Width="150"></ColumnDefinition>
+           <ColumnDefinition Width="*"></ColumnDefinition>
+       </Grid.ColumnDefinitions>
+       <Grid.RowDefinitions>
+           <RowDefinition Height="150"></RowDefinition>
+           <RowDefinition Height="*"></RowDefinition>
+       </Grid.RowDefinitions>
+       <Border BorderBrush="Black" BorderThickness="0,0,2,0">
+           <Image Source="/Resources/master-pol.ico"  Margin="10"/>
+       </Border>
+       <Border Grid.Row="1" BorderBrush="black" BorderThickness="0,0,2,0">
+           <Grid Background="{StaticResource MainPink}">
+               <StackPanel>
+                   <Button x:Name="BtnDishes" Click="BtnDishes_Click">Склад и материалы</Button>
+                   <Button x:Name="BtnIngredient" Click="BtnIngredient_Click">Сотрудники</Button>
+                   <Button x:Name="BtnOrders" Click="BtnOrders_Click">Заявки</Button>
+                   <Button  x:Name="BtnCapcha" Click="BtnCapcha_Click" Content="Партнёры"/>
+               </StackPanel>
+               <Button x:Name="BtnExit" Click="BtnExit_Click" VerticalAlignment="Bottom">Выход</Button>
+           </Grid>
+       </Border>
+       <Grid Grid.Column="1">
+           <Grid.RowDefinitions>
+               <RowDefinition Height="100"></RowDefinition>
+               <RowDefinition Height="*"></RowDefinition>
+           </Grid.RowDefinitions>
+           <Label FontSize="40" Margin="10" FontWeight="SemiBold" Content="{Binding ElementName=MainFrame, Path=Content.Title}"></Label>
+           <Grid Background="{StaticResource MainOrange}" Height="15" VerticalAlignment="Bottom" Margin="10"></Grid>
+       </Grid>
+       <Frame Grid.Column="1" x:Name="MainFrame" Margin="13,8,7,12" NavigationUIVisibility="Hidden"  ContentRendered="MainFrame_ContentRendered"/>
